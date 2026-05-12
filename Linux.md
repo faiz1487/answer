@@ -15,6 +15,5 @@ awk '/info/ {count++} END {print count}' app.log  --------it count the no. of in
 awk '{print $2}' app.log ------------------- print coloumn 2
 awk '$2 >= "08:53:00" && $2 <= "08:53:59" {print $2,$3,$4}' app.log  -------print only particular range
 AWK 'NR >= 2 && NR <= 10 {print NR}' app.log -------print row from 2 to 10
-<p style="color:red;">awk '/info/ {count++} END {print count}' app.log  --------it count the no. of info in this file</p>
-<p style="color:red;">grep -i -c info app.log --------------------it count the no. of info in this file</p>
-<p style="color:red;">This text is red</p>
+awk '/info/ {count++} END {print count}' app.log  --------it count the no. of info in this file
+grep -i -c info app.log --------------------it count the no. of info in this file
