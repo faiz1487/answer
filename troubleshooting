@@ -100,3 +100,39 @@
 	curl localhost:80
 	history
 	systemctl restart nginx
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+1.How do you troubleshoot process-related issues in Linux?------------------------process
+
+	Check system load using top and uptime
+	Identify high CPU/memory process using ps
+	Verify process status and PID
+	Check logs using tail and grep
+	Verify ports and connectivity
+	Use strace if process hangs
+	Kill/restart process only after RCA
+	Verify service after restart
+
+
+2.How do you troubleshoot disk space issues in Linux?--------------------------------Disk
+
+	Check disk usage using df -h
+	Identify large directories using du -sh
+	Find large files using find
+	Check logs in /var/log
+	Verify deleted files using lsof | grep deleted
+	Check inode usage using df -i
+	Clean temp/log files carefully
+	Restart services if deleted files still occupy space
+	Extend filesystem if required
+
+
+
+
+
+
+
