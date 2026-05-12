@@ -1,0 +1,102 @@
+1. Check Application / Service Status
+	Check service status
+	systemctl status nginx
+	Check all failed services
+	systemctl --failed
+	Check if process is running
+	ps -ef | grep nginx
+	Check service uptime
+	uptime
+2. Verify Logs Using tail -f
+	Monitor live logs
+	tail -f /var/log/messages
+	Application log monitoring
+	tail -f app.log
+	Last 100 lines with live monitoring
+	tail -100f app.log
+3. Check Recent Errors Using grep, head, tail
+	Find ERROR logs
+	grep -i error app.log
+	Find latest errors
+	tail -100 app.log | grep ERROR
+	Find warning messages
+	grep -i warning app.log
+	Check first lines of file
+	head -20 app.log
+	Check last lines of file
+	tail -20 app.log
+	Check logs between specific lines
+	sed -n '200,300p' app.log
+4. Monitor CPU, Memory, Disk
+	CPU and process monitoring
+	top
+	Better monitoring tool
+	htop
+	CPU usage
+	mpstat
+	Memory usage
+	free -h
+	Disk usage
+	df -h
+	Disk utilization by folder
+	du -sh /*
+	Check I/O issue
+	iostat
+5. Verify Network and Port Connectivity
+	Check listening ports
+	netstat -tulnp
+
+	or
+
+	ss -tulnp
+	Check port connectivity
+	telnet IP PORT
+
+	Example:
+
+	telnet 10.10.10.5 8080
+	Test API or application response
+	curl http://localhost:8080
+	Ping server
+	ping google.com
+	DNS check
+	nslookup google.com
+	Trace network route
+	traceroute google.com
+6. Check Recent Changes or Deployments
+	Check command history
+	history
+	Check recently modified files
+	find /app -mtime -1
+	Check package updates
+	yum history
+
+	or
+
+	apt history
+	Check Kubernetes rollout
+	kubectl rollout history deployment deployment-name
+	Check Jenkins build logs
+	cat /var/log/jenkins/jenkins.log
+7. Restart Service After RCA (Root Cause Analysis)
+	Restart service
+	systemctl restart nginx
+	Start service
+	systemctl start nginx
+	Stop service
+	systemctl stop nginx
+	Reload without downtime
+	systemctl reload nginx
+	Verify service after restart
+	systemctl status nginx
+	Real Production Troubleshooting Flow
+	systemctl status nginx
+	tail -f /var/log/nginx/error.log
+	grep -i error /var/log/nginx/error.log
+	top
+	free -h
+	df -h
+	ss -tulnp
+	curl localhost:80
+	history
+	systemctl restart nginx
